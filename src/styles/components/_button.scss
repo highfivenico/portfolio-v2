@@ -1,7 +1,14 @@
 /* =========================================
    Button
 ========================================= */
+
 .button {
+  // --------- Thème par défaut ---------
+  --button-stroke: #{$color-black};
+  --button-flair: #{$color-black};
+  --button-label: #{$color-black};
+  --button-label-hover: #{$color-white};
+
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -30,19 +37,20 @@
       content: "";
       position: absolute;
       inset: 0;
-      border: 0.125rem solid $color-black;
+      border: 0.125rem solid var(--button-stroke);
       border-radius: 6.25rem;
       pointer-events: none;
     }
 
     &:hover .button__label {
-      color: $color-white;
+      color: var(--button-label-hover);
     }
 
     .button__label {
       position: relative;
       z-index: 1;
       text-align: center;
+      color: var(--button-label);
       transition: color 0.15s ease-in-out;
     }
   }
@@ -64,10 +72,26 @@
       left: 0;
       width: 170%;
       aspect-ratio: 1/1;
-      background-color: $color-black;
+      background-color: var(--button-flair);
       border-radius: 50%;
       transform: translate(-50%, -50%);
       pointer-events: none;
     }
+  }
+
+  // --------- Variante claire (Footer) ---------
+  &--light {
+    --button-stroke: #{$color-white};
+    --button-flair: #{$color-white};
+    --button-label: #{$color-white};
+    --button-label-hover: #{$color-black};
+  }
+
+  // --------- Variante sombre (Hero) ---------
+  &--dark {
+    --button-stroke: #{$color-black};
+    --button-flair: #{$color-black};
+    --button-label: #{$color-black};
+    --button-label-hover: #{$color-white};
   }
 }

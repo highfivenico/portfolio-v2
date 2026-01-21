@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-const Button = () => {
+const Button = ({ variant = "dark" }) => {
   const buttonRef = useRef(null);
 
   // Animation hover du flair
@@ -85,7 +85,7 @@ const Button = () => {
   return (
     <a
       href="https://www.linkedin.com/in/tonprofil"
-      className="button button--stroke"
+      className={`button button--stroke button--${variant}`}
       ref={buttonRef}
       onClick={handleClick}
     >

@@ -1,0 +1,33 @@
+/* =========================================
+   Footer
+========================================= */
+
+.footer {
+  height: 50vh;
+  background: linear-gradient(
+    3deg,
+    rgba(12, 29, 48, 1) 0%,
+    rgba(13, 59, 94, 1) 100%
+  );
+  color: $color-white;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 -15px 30px rgba(42, 42, 42, 0.42);
+
+  &__text {
+    text-align: center;
+    font-size: $font-size-xl;
+    font-weight: 300;
+    line-height: 1.5;
+
+    @media (max-width: 768px) {
+      &__text {
+        font-size: $font-size-md;
+        line-height: 1.2;
+      }
+    }
+  }
+}
